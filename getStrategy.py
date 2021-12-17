@@ -43,6 +43,15 @@ def getStrategy():
             "#str_detail > div.wrap > div > div > div.main > section > section.u-mb40 > table > tbody > tr:nth-of-type(8) > td.bg-yellow")
         strategy["pf_b"] = float(elems[0].contents[0])
 
+        #期待値
+        elems = soup.select(
+            "#str_detail > div.wrap > div > div > div.main > section > section.u-mb40 > table > tbody > tr:nth-of-type(12) > td.bg-purple")
+        strategy["kitai_a"] = elems[0].contents[0]
+        elems = soup.select(
+            "#str_detail > div.wrap > div > div > div.main > section > section.u-mb40 > table > tbody > tr:nth-of-type(12) > td.bg-yellow")
+        strategy["kitai_b"] = elems[0].contents[0]
+
+
         strData.append(strategy)
 
 if __name__ == "__main__":
